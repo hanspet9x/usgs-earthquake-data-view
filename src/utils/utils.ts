@@ -12,3 +12,5 @@ export const sortObjects = (objs: Record<string, any>[], key: string, reversed: 
         });
     }
 }
+
+export const getClassNames = (...names: string[]) => names.join(" ");

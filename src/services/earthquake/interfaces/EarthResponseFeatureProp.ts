@@ -1,3 +1,4 @@
+export type IEarthquakeFeatureStatusProps = "automatic" | "reviewed" | "deleted";
 export interface IEarthquakeFeatureProps {
     mag: number;
     place: string;
@@ -10,7 +11,7 @@ export interface IEarthquakeFeatureProps {
     cdi: number;
     mmi: number;
     alert: string;
-    status: string;
+    status: IEarthquakeFeatureStatusProps;
     tsunami: number;
     sig: number;
     net: string;
@@ -23,5 +24,6 @@ export interface IEarthquakeFeatureProps {
     rms: number;
     gap: number;
     magType: string;
-    type: string;
+    type: "earthquake" | "quarry";
+
   }
