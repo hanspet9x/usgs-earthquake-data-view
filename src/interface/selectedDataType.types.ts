@@ -1,0 +1,1 @@
+export type SelectedDataType = "Feature" | "Location" | "Earthquake" | "Quarry" | "Tsunami" | "Status";

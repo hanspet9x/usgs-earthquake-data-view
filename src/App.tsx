@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import { useState } from 'react';
+import { EarthquakeService } from './services/earthquake/EarthquakeService';
+import { useSetEarthquakeData } from './context/hooks/updateEarthquakeData';
+import { LogService } from './services/log/LogService';
+import Dashboard from './pages/Dashboard';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { setData } = useSetEarthquakeData();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const response = await EarthquakeService.getData()
+      console.log(response)
+      if (!response.error) {
+        
+        setData(response.data);
+        setLoaded(true);
+      } else {
+        alert(response.data);
+        LogService.log(response);
+      }
+    })();
+  }, []);
+
+  return loaded ? <Dashboard /> : <>loading...</>
 }
 
 export default App;
