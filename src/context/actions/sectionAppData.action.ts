@@ -11,8 +11,8 @@ let accumulator: IAppDataSectioned = {
   tsunami: [],
 };
 
-export const sidebarLinkAction = {
-  seperateData(data?: IEarthquakeFeature[]) {
+
+  export const getAppSectionedData = (data?: IEarthquakeFeature[]) =>{
     if(data) {
         return data.reduce((accumulator, {properties}) => {
             //location
@@ -48,5 +48,4 @@ export const sidebarLinkAction = {
           }, accumulator);
     }
     return accumulator;
-  },
-};
+  };
