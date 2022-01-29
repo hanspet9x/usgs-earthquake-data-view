@@ -1,6 +1,6 @@
 import { IEarthquakeFeatureProps } from "../../../services/earthquake/interfaces/EarthResponseFeatureProp";
 
-export interface ISidebarLinkData {
+export interface IAppDataSectioned {
     location: Record<string, IEarthquakeFeatureProps[]>;
     earthquake: IEarthquakeFeatureProps[];
     quarry: IEarthquakeFeatureProps[];

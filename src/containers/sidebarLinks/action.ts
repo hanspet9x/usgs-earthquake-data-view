@@ -1,9 +1,9 @@
 import { IEarthquakeFeature } from "../../services/earthquake/interfaces/EarthResponseFeature.types";
 import {
 } from "../../services/earthquake/interfaces/EarthResponseFeatureProp";
-import { ISidebarLinkData } from "./interfaces/sidelInkData.types";
+import { IAppDataSectioned } from "./interfaces/sidelInkData.types";
 
-let accumulator: ISidebarLinkData = {
+let accumulator: IAppDataSectioned = {
   earthquake: [],
   location: {},
   quarry: [],
