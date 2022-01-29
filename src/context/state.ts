@@ -1,5 +1,5 @@
-import { IEarthquakeResponse } from './../services/earthquake/interfaces/EarthquakeResponse.types';
+import { IAppState } from './interface/appState.types';
 
-export const AppState = {
-    data: {} as 
+export const AppState: IAppState = {
+    data: undefined,
 }
