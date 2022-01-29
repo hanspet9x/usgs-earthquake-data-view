@@ -5,7 +5,7 @@ import { SiOpenwrt } from 'react-icons/si';
 import { useSetEarthquakeData } from '../../context/hooks/updateEarthquakeData';
 import { sidebarAction } from './action';
 
-const SideBar = () => {
+const SideBarHeader = () => {
     const {setData} = useSetEarthquakeData();
     const [watching, setWatching] = useState(false);
 
@@ -33,7 +33,7 @@ const SideBar = () => {
             <h5>Earthquake brief  and realtime data.</h5>
             <div>
                 {/* TODO: create input for iputing time */}
-                <BsArrowRepeat title="Updates automatically" onClick={onSyncClicked}/>
+                <BsArrowRepeat title="Updates automatically" color='' onClick={onSyncClicked}/>
                 {/* TODO: set earthqueake event to ge as notification.*/}
                 {/* TODO: create dummy user account */}
                 <SiOpenwrt title="Subscribe for triggers" onClick={sidebarAction.subscribe} />
@@ -42,4 +42,4 @@ const SideBar = () => {
     );
 };
 
-export default SideBar;
+export default SideBarHeader;
