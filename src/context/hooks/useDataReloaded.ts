@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
-import { AppContext } from "../context/Provider";
+import { AppContext } from "../Provider";
 
 export const useIsDataReloaded = () => {
     const {state} = useContext(AppContext);

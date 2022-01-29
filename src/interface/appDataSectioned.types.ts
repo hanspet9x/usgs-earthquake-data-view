@@ -1,4 +1,4 @@
-import { IEarthquakeFeatureProps } from "../../../services/earthquake/interfaces/EarthResponseFeatureProp";
+import { IEarthquakeFeatureProps } from "../services/earthquake/interfaces/EarthResponseFeatureProp";
 
 export interface IAppDataSectioned {
     location: Record<string, IEarthquakeFeatureProps[]>;

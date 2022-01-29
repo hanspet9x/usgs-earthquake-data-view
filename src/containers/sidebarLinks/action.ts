@@ -1,7 +1,7 @@
 import { IEarthquakeFeature } from "../../services/earthquake/interfaces/EarthResponseFeature.types";
 import {
 } from "../../services/earthquake/interfaces/EarthResponseFeatureProp";
-import { IAppDataSectioned } from "./interfaces/sidelInkData.types";
+import { IAppDataSectioned } from "../../interface/appDataSectioned.types";
 
 let accumulator: IAppDataSectioned = {
   earthquake: [],

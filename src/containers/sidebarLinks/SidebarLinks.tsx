@@ -5,9 +5,6 @@ import { sidebarLinkAction } from './action';
 
 const SidebarLinks = () => {
     const { data } = useSetEarthquakeData();
-    const sideBarData = useMemo(() => {
-        return sidebarLinkAction.seperateData(data?.features)
-    }, []);
 
     return (
         <ul>
