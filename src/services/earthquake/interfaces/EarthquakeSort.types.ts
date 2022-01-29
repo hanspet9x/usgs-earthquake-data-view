@@ -1,0 +1,1 @@
+export type EarthquakeSortTypes = "magnitude" | "latest" | "location" | "type";
