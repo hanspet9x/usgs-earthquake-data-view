@@ -1,6 +1,7 @@
 import React from "react";
 import { getClassNames } from "../../utils/utils";
 import { FaCaretRight } from 'react-icons/fa'
+import './index.scss';
 interface Props<T> {
   name: T;
   count?: number;
@@ -17,9 +18,10 @@ const SidebarLink = <T,>(props: Props<T>) => {
         props.activeName === props.name ? "sidbar-active" : ""
       )}
     >
-      {props.name}
-      {props.count}
-
+      <div className="links-name">
+        {props.name}
+        {props.count}
+      </div>
       <FaCaretRight />
     </li>
   );

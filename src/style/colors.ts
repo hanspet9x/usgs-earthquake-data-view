@@ -3,6 +3,6 @@ export const appColors = {
     background: '#E5E5E5',
     surface: '#FFFFFF',
     text: '#333333',
-    shadow: '',
+    shadow: '#848080;',
     accent: '#17EF53'
 }

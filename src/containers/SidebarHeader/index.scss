@@ -1,0 +1,33 @@
+@use "./../../style/base";
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  h1 {
+    text-align: center;
+    color: 'gray';
+    margin-bottom: 0px;
+    // line-height: px;
+  }
+
+  h6 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 25px;
+    margin: 0px;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  .icons {
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      border: solid 1px gray;
+      margin: 5px;
+      cursor: pointer;
+  }
+}

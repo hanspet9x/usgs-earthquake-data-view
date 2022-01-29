@@ -4,7 +4,7 @@ import SidebarLink from '../../components/sideBarLink/SidebarLink';
 import { useSetEarthquakeData } from '../../context/hooks/updateEarthquakeData';
 import { useSelectedData } from '../../context/hooks/useSelectedData';
 import { SelectedDataType } from '../../interface/selectedDataType.types';
-
+import './index.scss';
 
 const SidebarLinks = () => {
     const { data } = useSetEarthquakeData();
@@ -17,7 +17,7 @@ const SidebarLinks = () => {
     }
 
     return (
-        <ul>
+        <ul className="sidebar-links">
             {/* TODO: restructure links */}
             <SidebarLink<SelectedDataType> name='Feature' count={data?.all.features.length}
                 activeName={activeName} onLinkClicked={onLinkClicked} />

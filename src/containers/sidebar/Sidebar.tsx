@@ -1,10 +1,10 @@
 import React from 'react';
 import SideBarHeader from '../SidebarHeader/SideBarHeader';
 import SidebarLinks from '../sidebarLinks/SidebarLinks';
-
+import './index.scss';
 const Sidebar = () => {
     return (
-        <div>
+        <div className="sidebar">
             <SideBarHeader />
             <SidebarLinks />
         </div>
