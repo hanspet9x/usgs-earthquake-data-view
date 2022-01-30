@@ -3,7 +3,7 @@ import { SelectedDataType } from "../../interface/selectedDataType.types";
 import { IEarthquakeResponse } from "../../services/earthquake/interfaces/EarthquakeResponse.types";
 
 export interface IAppState{
-    data?: {
+    data: {
         all: IEarthquakeResponse,
         sectioned: IAppDataSectioned
     },

@@ -7,5 +7,5 @@ export const useSelectedData = () => {
   const setData = (type: SelectedDataType) => {
     dispatch({ type: "selectedDataType", payload: type});
   };
-  return { data: state.data, setDataType: setData };
+  return { type: state.selectedDataType, setDataType: setData };
 };
