@@ -14,34 +14,35 @@ let accumulator: IAppDataSectioned = {
 
   export const getAppSectionedData = (data?: IEarthquakeFeature[]) =>{
     if(data) {
-        return data.reduce((accumulator, {properties}) => {
+        return data.reduce((accumulator, {properties, geometry, id}) => {
             //location
+            const nProperty = {...properties, coordinates: geometry.coordinates, id}
             
-            const location = accumulator.location[properties.place];
+            const location = accumulator.location[nProperty.place];
       
             if (location) {
               //add to existing...
-              location.unshift(properties);
+              location.unshift(nProperty);
             } else {
-              accumulator.location[properties.place] = [properties];
+              accumulator.location[nProperty.place] = [nProperty];
             }
       
             //earthquake and quarry
-            if (properties.type === "earthquake") {
-              accumulator.earthquake.unshift(properties);
+            if (nProperty.type === "earthquake") {
+              accumulator.earthquake.unshift(nProperty);
             } else {
-              accumulator.quarry.unshift(properties);
+              accumulator.quarry.unshift(nProperty);
             }
       
             //tsunami
-            if (properties.tsunami === 1) accumulator.tsunami.unshift(properties);
+            if (nProperty.tsunami === 1) accumulator.tsunami.unshift(nProperty);
       
             //status
-            const status = accumulator.status[properties.status];
+            const status = accumulator.status[nProperty.status];
             if (status) {
-              status.unshift(properties);
+              status.unshift(nProperty);
             } else {
-              accumulator.status[properties.status] = [properties];
+              accumulator.status[nProperty.status] = [nProperty];
             }
       
             return accumulator;

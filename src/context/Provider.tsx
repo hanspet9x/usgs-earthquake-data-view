@@ -9,7 +9,6 @@ export const AppContext = React.createContext({} as IContext);
 
 const Provider: FC = (props) => {
     const [state, dispatch] = useReducer(AppReducer, AppState);
-
     return (
         <AppContext.Provider value={{ state, dispatch }}>
             {props.children}

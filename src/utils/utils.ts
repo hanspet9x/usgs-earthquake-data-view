@@ -16,9 +16,9 @@ export const sortObjects = (objs: Record<string, any>[], key: string, reversed: 
 export const getClassNames = (...names: string[]) => names.join(" ");
 
 export const dateToString = (num: number) => {
-    return new Date(num).toISOString();
+    return new Date(num).toString();
 }
 
 export const toPercent = (value: number, base: number) => {
-    return ( value/base) * 100;
+    return Math.floor(( value/base) * 100);
 }

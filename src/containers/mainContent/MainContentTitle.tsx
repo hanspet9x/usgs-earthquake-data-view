@@ -9,8 +9,8 @@ interface Props {
 const MainContentTitle = ({ data, title }: Props) => {
   return (
     <div className="main-content-title">
-      <h3>{title}</h3>
-      {data.forEach((item) => <MainContent data={item} />)}
+      <h3>{title.toUpperCase()}</h3>
+      {data.map((item, i) => <MainContent data={item} key={i} />)}
     </div>
   );
 };

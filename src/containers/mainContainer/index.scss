@@ -1,6 +1,11 @@
 .main-container {
     position: fixed;
-    width: 80%;
+    width: 70%;
     top:0px;
     right: 0px;
+
+    .main-scroll {
+        overflow-y: scroll;
+        height: 85vh;
+    }
 }

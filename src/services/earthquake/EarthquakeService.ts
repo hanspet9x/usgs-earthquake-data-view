@@ -9,18 +9,20 @@ export class EarthquakeService {
   static getData(): Promise<IAPIResponse<IEarthquakeResponse>> {
     return APIService.get<IEarthquakeResponse>(earthquakeURL.allDay);
   }
-  static watch(
+  static async watch(
     periodInMs: number,
     callback: (response: IAPIResponse<IEarthquakeResponse>) => void
   ) {
-    EarthquakeService.watchHandler = setInterval(async() => {
-        const data = await EarthquakeService.getData();
-        callback(data);
+    const data = await EarthquakeService.getData();
+    callback(data);
+    EarthquakeService.watchHandler = setInterval(async () => {
+      const data = await EarthquakeService.getData();
+      callback(data);
     }, periodInMs);
   }
-  static stopWatch(){
-    if(EarthquakeService.watchHandler){
-        clearInterval(EarthquakeService.watchHandler);
+  static stopWatch() {
+    if (EarthquakeService.watchHandler) {
+      clearInterval(EarthquakeService.watchHandler);
     }
   }
 }

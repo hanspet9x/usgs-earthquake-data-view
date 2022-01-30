@@ -12,9 +12,11 @@ const MainContent = ({ data }: Props) => {
     <div className="main-content">
       <table>
         <tbody>
-          <Row name="Title" value={"Title"}  name2="Location" value2={data.place} />
+          {/* <Row name="ID" value={data.id ?? ''} />  */}
+          <Row name="Title" value={data.title}  name2="Location" value2={data.place} />
           <Row name="Time" value={dateToString(data.time)}  name2="Updated" value2={dateToString(data.updated)} />
-          <Row name="Coordinate" value="col" name2="Gap" value2={data.place} /> 
+          {/* <Row name="Coordinate" value={data.coordinates?.join(' ')} name2="Gap" value2={data.gap+''} />  */}
+          
         </tbody>
       </table>
       <div>
@@ -23,7 +25,7 @@ const MainContent = ({ data }: Props) => {
         <ProgressBar name="Instrumented Intensity" value={toPercent(data.mmi, 10)+''}  />
         <ProgressBar name="Significance" value={toPercent(data.sig, 1000)+''}  />
       </div>
-      <div>
+      <div className="link"> 
         <a href={data.url} target="_blank" rel="noreferrer">More info</a>
       </div>
     </div>

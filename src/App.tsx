@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     (async () => {
       const response = await EarthquakeService.getData()
-      console.log(response)
       if (!response.error) {
         
         setData(response.data);

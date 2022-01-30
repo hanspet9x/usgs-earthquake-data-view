@@ -1,3 +1,3 @@
 export const configs = {
-    watchMin: 2
+    watchMin: .2
 }

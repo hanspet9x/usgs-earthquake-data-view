@@ -19,8 +19,7 @@ const SidebarLink = <T,>(props: Props<T>) => {
       )}
     >
       <div className="links-name">
-        {props.name}
-        {props.count}
+        {props.name} (<em>{props.count}</em>)
       </div>
       <FaCaretRight />
     </li>

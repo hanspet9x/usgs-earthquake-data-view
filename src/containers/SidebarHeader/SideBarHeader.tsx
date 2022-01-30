@@ -17,9 +17,10 @@ const SideBarHeader = () => {
       setWatching(false);
     } else {
       sidebarAction.autoSyncUpdates((data) => {
+        console.log(data);
         if (!data.error) {
           setData(data.data);
-          setWatching(false);
+          setWatching(true);
           return;
         }
         //TODO: add loggerService
@@ -40,7 +41,7 @@ const SideBarHeader = () => {
         <BsArrowRepeat
           title="Update data automatically"
           className="icons"
-          color=""
+          color={watching ? 'blue' : 'black'}
           onClick={onSyncClicked}
         />
         {/* TODO: set earthqueake event to ge as notification.*/}

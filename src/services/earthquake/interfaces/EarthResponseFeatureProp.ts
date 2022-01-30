@@ -1,5 +1,8 @@
 export type IEarthquakeFeatureStatusProps = "automatic" | "reviewed" | "deleted";
 export interface IEarthquakeFeatureProps {
+    id?: string;
+    coordinates?: number[];
+    title:string;
     mag: number;
     place: string;
     time: number;
